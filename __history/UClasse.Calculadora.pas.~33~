@@ -1,0 +1,264 @@
+unit UClasse.Calculadora;
+
+interface
+
+uses Controls, UInterface.Calculadora;
+
+type
+
+  TCaptionHelper = record helper for TCaption
+    function ToFloat: Double;
+  end;
+
+  TStrHelp = record helper for
+    String
+    function ToCurrency: Currency;
+  end;
+
+  TCalculadora = class(TInterfacedObject, ICalculadora)
+  private
+    function Soma: IOperacoes;
+    function Subtrair: IOperacoes;
+    function Dividir: IOperacoes;
+    function Multiplicar: IOperacoes;
+  public
+    constructor create;
+    destructor destroy; override;
+    class function New: ICalculadora;
+  end;
+
+  TSomar = class(TInterfacedObject, IOperacoes)
+  private
+    { private declarations }
+  protected
+    { protected declarations }
+  public
+    constructor create;
+    destructor destroy; override;
+    class function New: IOperacoes;
+    function Operacao(Num1, Num2: Double): Double; overload;
+    function Operacao(Num1, Num2: string): string; overload;
+  published
+    { published declarations }
+  end;
+
+  TSubtrair = class(TInterfacedObject, IOperacoes)
+  private
+    { private declarations }
+  protected
+    { protected declarations }
+  public
+    constructor create;
+    destructor destroy; override;
+    class function New: IOperacoes;
+    function Operacao(Num1, Num2: Double): Double; overload;
+    function Operacao(Num1, Num2: string): string; overload;
+  published
+    { published declarations }
+  end;
+
+  TDividir = class(TInterfacedObject, IOperacoes)
+  private
+    { private declarations }
+  protected
+    { protected declarations }
+  public
+    constructor create;
+    destructor destroy; override;
+    class function New: IOperacoes;
+    function Operacao(Num1, Num2: Double): Double; overload;
+    function Operacao(Num1, Num2: string): string; overload;
+  published
+    { published declarations }
+  end;
+
+  TMultiplicar = class(TInterfacedObject, IOperacoes)
+  private
+    { private declarations }
+  protected
+    { protected declarations }
+  public
+    constructor create;
+    destructor destroy; override;
+    class function New: IOperacoes;
+    function Operacao(Num1, Num2: Double): Double; overload;
+    function Operacao(Num1, Num2: string): string; overload;
+  published
+    { published declarations }
+  end;
+
+implementation
+
+uses
+  System.SysUtils;
+
+{ TSomar }
+
+constructor TSomar.create;
+begin
+
+end;
+
+destructor TSomar.destroy;
+begin
+
+  inherited;
+end;
+
+class function TSomar.New: IOperacoes;
+begin
+  Result := Self.create
+end;
+
+function TSomar.Operacao(Num1, Num2: string): string;
+begin
+  Result := (Num1.ToCurrency + Num2.ToCurrency).ToString;
+end;
+
+function TSomar.Operacao(Num1, Num2: Double): Double;
+begin
+  Result := Num1 + Num2;
+end;
+
+{ TSubtrair }
+
+constructor TSubtrair.create;
+begin
+
+end;
+
+destructor TSubtrair.destroy;
+begin
+
+  inherited;
+end;
+
+class function TSubtrair.New: IOperacoes;
+begin
+  Result := Self.create
+end;
+
+function TSubtrair.Operacao(Num1, Num2: string): string;
+begin
+  Result := (Num1.ToCurrency - Num2.ToCurrency).ToString;
+end;
+
+function TSubtrair.Operacao(Num1, Num2: Double): Double;
+begin
+  Result := Num1 - Num2;
+end;
+
+{ TDividir }
+
+constructor TDividir.create;
+begin
+
+end;
+
+destructor TDividir.destroy;
+begin
+
+  inherited;
+end;
+
+class function TDividir.New: IOperacoes;
+begin
+  Result := Self.create;
+end;
+
+function TDividir.Operacao(Num1, Num2: string): string;
+begin
+  Result := (Num1.ToCurrency / Num2.ToCurrency).ToString;
+end;
+
+function TDividir.Operacao(Num1, Num2: Double): Double;
+begin
+  if Num2 <= 0 then
+    raise Exception.create('Valor não pode ser dividido por  0 ');
+
+  Result := Num1 / Num2;
+end;
+
+{ TMultiplicar }
+
+constructor TMultiplicar.create;
+begin
+
+end;
+
+destructor TMultiplicar.destroy;
+begin
+
+  inherited;
+end;
+
+class function TMultiplicar.New: IOperacoes;
+begin
+  Result := Self.create;
+end;
+
+function TMultiplicar.Operacao(Num1, Num2: string): string;
+begin
+  Result := (Num1.ToCurrency * Num2.ToCurrency).ToString;
+end;
+
+function TMultiplicar.Operacao(Num1, Num2: Double): Double;
+begin
+  Result := Num1 * Num2;
+end;
+
+{ TCalculadora }
+
+constructor TCalculadora.create;
+begin
+
+end;
+
+destructor TCalculadora.destroy;
+begin
+
+  inherited;
+end;
+
+function TCalculadora.Dividir: IOperacoes;
+begin
+  Result := TDividir.New;
+end;
+
+function TCalculadora.Multiplicar: IOperacoes;
+begin
+  Result := TMultiplicar.New;
+end;
+
+class function TCalculadora.New: ICalculadora;
+begin
+  Result := Self.create;
+end;
+
+function TCalculadora.Soma: IOperacoes;
+begin
+  Result := TSomar.New;
+end;
+
+function TCalculadora.Subtrair: IOperacoes;
+begin
+  Result := TSubtrair.New;
+end;
+
+{ TCaptionHelper }
+
+{ TCaptionHelper }
+
+function TCaptionHelper.ToFloat: Double;
+begin
+  Result := StrToFloat(Self);
+end;
+
+{ TStrHelp }
+
+function TStrHelp.ToCurrency: Currency;
+begin
+  Result := StrToCurr(Self);
+end;
+
+end.

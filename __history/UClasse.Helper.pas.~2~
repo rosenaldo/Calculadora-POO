@@ -1,0 +1,19 @@
+unit UClasse.Helper;
+
+interface
+
+uses Controls;
+
+type
+  TCaptionHelper = record helper for TCaption
+    function ToFloat: Double;
+  end;
+
+  TStrHelp = record helper for
+    String
+    function ToCurrency: Currency;
+  end;
+
+implementation
+
+end.

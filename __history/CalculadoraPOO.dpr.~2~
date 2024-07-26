@@ -1,0 +1,14 @@
+program CalculadoraPOO;
+
+uses
+  Vcl.Forms,
+  UCalculadora in 'UCalculadora.pas' {FOR_PRINCIPAL};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFOR_PRINCIPAL, FOR_PRINCIPAL);
+  Application.Run;
+end.

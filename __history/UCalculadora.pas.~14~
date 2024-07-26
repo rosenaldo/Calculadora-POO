@@ -1,0 +1,35 @@
+unit UCalculadora;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, UClasse.Calculadora;
+
+type
+  TFOR_PRINCIPAL = class(TForm)
+    EDT_NUM01: TEdit;
+    EDT_NUM02: TEdit;
+    EDT_NUM03: TEdit;
+    Label1: TLabel;
+    BTN_SOMA: TButton;
+    BTN_SUBTRAIR: TButton;
+    BTN_DIVIDIR: TButton;
+    BTN_MULTIPLICAR: TButton;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FOR_PRINCIPAL: TFOR_PRINCIPAL;
+
+implementation
+
+{$R *.dfm}
+{ TFOR_PRINCIPAL }
+
+// EDT_NUM03.Text := FloatToStr(Calculadora.Operacao(StrToFloat(EDT_NUM01.Text), StrToFloat(EDT_NUM02.Text)));
+end.
