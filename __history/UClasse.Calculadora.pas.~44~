@@ -1,0 +1,73 @@
+unit UClasse.Calculadora;
+
+interface
+
+uses Controls, UInterface.Calculadora, UClasse.Helper, UClasse.Dividir,
+  UClasse.Subtrair, UClasse.Soma, UClasse.Multiplicar,
+  System.Generics.Collections;
+
+type
+
+  TCalculadora = class(TInterfacedObject, ICalculadora)
+  private
+    FLista: TList<Double>;
+    // ESSE TLIST É UMA LISTA GENERICA QUE PERMITE TIPIFICAR OS VALORES QUE RECEBEM, SE NÃO FOR GENERICA NÃO TEM ACESSO A CERTO TIPOS DE DADOS
+    function Soma: IOperacoes;
+    function Subtrair: IOperacoes;
+    function Dividir: IOperacoes;
+    function Multiplicar: IOperacoes;
+
+  public
+    constructor create;
+    destructor destroy; override;
+    class function New: ICalculadora;
+  end;
+
+implementation
+
+uses
+  System.SysUtils;
+
+{ TCalculadora }
+
+constructor TCalculadora.create;
+begin
+  FLista := TList<Double>.create;
+end;
+
+destructor TCalculadora.destroy;
+begin
+  FLista.Free;
+  inherited;
+end;
+
+function TCalculadora.Dividir: IOperacoes;
+begin
+  Result := TDividir.New;
+end;
+
+function TCalculadora.Multiplicar: IOperacoes;
+begin
+  Result := TMultiplicar.New;
+end;
+
+class function TCalculadora.New: ICalculadora;
+begin
+  Result := Self.create;
+end;
+
+function TCalculadora.Soma: IOperacoes;
+begin
+  Result := TSomar.New;
+end;
+
+function TCalculadora.Subtrair: IOperacoes;
+begin
+  Result := TSubtrair.New;
+end;
+
+{ TCaptionHelper }
+
+{ TCaptionHelper }
+
+end.

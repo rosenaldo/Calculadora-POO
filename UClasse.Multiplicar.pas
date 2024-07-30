@@ -2,20 +2,20 @@ unit UClasse.Multiplicar;
 
 interface
 
-uses UInterface.Calculadora,System.SysUtils;
+uses UInterface.Calculadora, System.SysUtils, UCauculadora.Operacoes,
+  System.Generics.Collections;
 
 type
-  TMultiplicar = class(TInterfacedObject, IOperacoes)
+  TMultiplicar = class sealed(TOperacoes)
   private
     { private declarations }
   protected
     { protected declarations }
   public
-    constructor create;
+    constructor create(var Value: TList<Double>);
     destructor destroy; override;
-    class function New: IOperacoes;
-    function Operacao(Num1, Num2: Double): Double; overload;
-    function Operacao(Num1, Num2: string): string; overload;
+    class function New(var Value: TList<Double>): IOperacoes;
+    function Executar: string; override;
   published
     { published declarations }
   end;
@@ -26,7 +26,7 @@ implementation
 
 constructor TMultiplicar.create;
 begin
-
+  FLista := Value;
 end;
 
 destructor TMultiplicar.destroy;
@@ -35,19 +35,15 @@ begin
   inherited;
 end;
 
-class function TMultiplicar.New: IOperacoes;
+function TMultiplicar.Executar: string;
 begin
-  Result := Self.create;
+
+  inherited
 end;
 
-function TMultiplicar.Operacao(Num1, Num2: string): string;
+class function TMultiplicar.New(var Value: TList<Double>): IOperacoes;
 begin
-  Result := (Num1.ToDouble() * Num2.ToDouble()).ToString;
-end;
-
-function TMultiplicar.Operacao(Num1, Num2: Double): Double;
-begin
-  Result := Num1 * Num2;
+  Result := Self.create(Value);
 end;
 
 end.

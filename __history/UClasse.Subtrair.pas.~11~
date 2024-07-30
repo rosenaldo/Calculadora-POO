@@ -1,0 +1,49 @@
+unit UClasse.Subtrair;
+
+interface
+
+uses UInterface.Calculadora, System.SysUtils, UCauculadora.Operacoes,
+  System.Generics.Collections;
+
+type
+  TSubtrair = class sealed(TOperacoes)
+  private
+    { private declarations }
+  protected
+    { protected declarations }
+  public
+    constructor create(var Value: TList<Double>);
+    destructor destroy; override;
+    class function New(var Value: TList<Double>): IOperacoes;
+    function Executar: string; override;
+  published
+    { published declarations }
+  end;
+
+implementation
+
+{ TSubtrair }
+
+constructor TSubtrair.create;
+begin
+   FLista:= Value;
+end;
+
+destructor TSubtrair.destroy;
+begin
+
+  inherited;
+end;
+
+function TSubtrair.Executar: string;
+begin
+
+  inherited;
+end;
+
+class function TSubtrair.New(var Value: TList<Double>): IOperacoes;
+begin
+  Result := Self.create(Value);
+end;
+
+end.

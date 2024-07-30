@@ -2,20 +2,20 @@ unit UClasse.Subtrair;
 
 interface
 
-uses UInterface.Calculadora,System.SysUtils;
+uses UInterface.Calculadora, System.SysUtils, UCauculadora.Operacoes,
+  System.Generics.Collections;
 
 type
-  TSubtrair = class(TInterfacedObject, IOperacoes)
+  TSubtrair = class sealed(TOperacoes)
   private
     { private declarations }
   protected
     { protected declarations }
   public
-    constructor create;
+    constructor create(var Value: TList<Double>);
     destructor destroy; override;
-    class function New: IOperacoes;
-    function Operacao(Num1, Num2: Double): Double; overload;
-    function Operacao(Num1, Num2: string): string; overload;
+    class function New(var Value: TList<Double>): IOperacoes;
+    function Executar: string; override;
   published
     { published declarations }
   end;
@@ -26,7 +26,7 @@ implementation
 
 constructor TSubtrair.create;
 begin
-
+  FLista := Value;
 end;
 
 destructor TSubtrair.destroy;
@@ -35,19 +35,15 @@ begin
   inherited;
 end;
 
-class function TSubtrair.New: IOperacoes;
+function TSubtrair.Executar: string;
 begin
-  Result := Self.create
+
+  inherited;
 end;
 
-function TSubtrair.Operacao(Num1, Num2: string): string;
+class function TSubtrair.New(var Value: TList<Double>): IOperacoes;
 begin
-  Result := (Num1.ToDouble() - Num2.ToDouble()).ToString;
-end;
-
-function TSubtrair.Operacao(Num1, Num2: Double): Double;
-begin
-  Result := Num1 - Num2;
+  Result := Self.create(Value);
 end;
 
 end.

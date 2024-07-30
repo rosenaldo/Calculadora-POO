@@ -9,7 +9,8 @@ uses
   UClasse.Soma in 'UClasse.Soma.pas',
   UClasse.Subtrair in 'UClasse.Subtrair.pas',
   UClasse.Dividir in 'UClasse.Dividir.pas',
-  UClasse.Multiplicar in 'UClasse.Multiplicar.pas';
+  UClasse.Multiplicar in 'UClasse.Multiplicar.pas',
+  UCauculadora.Operacoes in 'UCauculadora.Operacoes.pas';
 
 {$R *.res}
 

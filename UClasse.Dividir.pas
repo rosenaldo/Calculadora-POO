@@ -2,33 +2,31 @@ unit UClasse.Dividir;
 
 interface
 
-uses UInterface.Calculadora,System.SysUtils;
+uses UInterface.Calculadora, System.SysUtils, UCauculadora.Operacoes,
+  System.Generics.Collections;
 
 type
-  TDividir = class(TInterfacedObject, IOperacoes)
+  TDividir = class sealed(TOperacoes)
   private
     { private declarations }
   protected
     { protected declarations }
   public
-    constructor create;
+    constructor create(var Value: TList<Double>);
     destructor destroy; override;
-    class function New: IOperacoes;
-    function Operacao(Num1, Num2: Double): Double; overload;
-    function Operacao(Num1, Num2: string): string; overload;
+    class function New(var Value: TList<Double>): IOperacoes;
+    function Executar: string; override;
   published
     { published declarations }
   end;
 
 implementation
 
-
-
 { TDividir }
 
-constructor TDividir.create;
+constructor TDividir.create(var Value: TList<Double>);
 begin
-
+  FLista := Value;
 end;
 
 destructor TDividir.destroy;
@@ -37,22 +35,15 @@ begin
   inherited;
 end;
 
-class function TDividir.New: IOperacoes;
+function TDividir.Executar: string;
 begin
-  Result := Self.create;
+
+  inherited
 end;
 
-function TDividir.Operacao(Num1, Num2: string): string;
+class function TDividir.New(var Value: TList<Double>): IOperacoes;
 begin
-  Result := (Num1.ToDouble / Num2.ToDouble).ToString;
-end;
-
-function TDividir.Operacao(Num1, Num2: Double): Double;
-begin
-  if Num2 <= 0 then
-    raise Exception.create('Valor não pode ser dividido por  0 ');
-
-  Result := Num1 / Num2;
+  Result := Self.create(Value);
 end;
 
 end.

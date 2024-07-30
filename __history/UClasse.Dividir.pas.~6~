@@ -1,0 +1,48 @@
+unit UClasse.Dividir;
+
+interface
+
+uses UInterface.Calculadora, System.SysUtils, UCauculadora.Operacoes;
+
+type
+  TDividir = class(TOperacoes)
+  private
+    { private declarations }
+  protected
+    { protected declarations }
+  public
+    constructor create;
+    destructor destroy; override;
+    class function New: IOperacoes;
+    function Executar: string; override;
+  published
+    { published declarations }
+  end;
+
+implementation
+
+{ TDividir }
+
+constructor TDividir.create;
+begin
+
+end;
+
+destructor TDividir.destroy;
+begin
+
+  inherited;
+end;
+
+function TDividir.Executar: string;
+begin
+
+  inherited
+end;
+
+class function TDividir.New: IOperacoes;
+begin
+  Result := Self.create;
+end;
+
+end.

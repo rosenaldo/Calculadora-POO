@@ -1,19 +1,21 @@
 unit UClasse.Soma;
 
 interface
-  uses UInterface.Calculadora,System.SysUtils;
+
+uses UInterface.Calculadora, System.SysUtils, UCauculadora.Operacoes,
+  System.Generics.Collections;
+
 type
-  TSomar = class(TInterfacedObject, IOperacoes)
+  TSomar = class sealed(TOperacoes)
   private
     { private declarations }
   protected
     { protected declarations }
   public
-    constructor create;
+    constructor create(var Value: TList<Double>);
     destructor destroy; override;
-    class function New: IOperacoes;
-    function Operacao(Num1, Num2: Double): Double; overload;
-    function Operacao(Num1, Num2: string): string; overload;
+    class function New(var Value: TList<Double>): IOperacoes;
+    function Executar: string; override;
   published
     { published declarations }
   end;
@@ -23,7 +25,7 @@ implementation
 { TSomar }
 constructor TSomar.create;
 begin
-
+  FLista := Value;
 end;
 
 destructor TSomar.destroy;
@@ -32,19 +34,15 @@ begin
   inherited;
 end;
 
-class function TSomar.New: IOperacoes;
+function TSomar.Executar: string;
 begin
-  Result := Self.create
+
+  inherited
 end;
 
-function TSomar.Operacao(Num1, Num2: string): string;
+class function TSomar.New(var Value: TList<Double>): IOperacoes;
 begin
-  Result := (Num1.ToDouble() + Num2.ToDouble()).ToString;
-end;
-
-function TSomar.Operacao(Num1, Num2: Double): Double;
-begin
-  Result := Num1 + Num2;
+  Result := Self.create(Value);
 end;
 
 end.
