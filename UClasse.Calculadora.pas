@@ -30,7 +30,7 @@ type
 
     constructor create;
     destructor destroy; override;
-    class function New(var Value: TList<Double>): ICalculadora;
+    class function New: ICalculadora;
   end;
 
 implementation
@@ -71,27 +71,27 @@ end;
 
 function TCalculadora.Dividir: IOperacoes;
 begin
-  Result := TDividir.New;
+  Result := TDividir.New(FLista);
 end;
 
 function TCalculadora.Multiplicar: IOperacoes;
 begin
-  Result := TMultiplicar.New;
+  Result := TMultiplicar.New(FLista);
 end;
 
-class function TCalculadora.New(var Value: TList<Double>): ICalculadora;
+class function TCalculadora.New: ICalculadora;
 begin
   Result := Self.create;
 end;
 
 function TCalculadora.Soma: IOperacoes;
 begin
-  Result := TSomar.New;
+  Result := TSomar.New(FLista);
 end;
 
 function TCalculadora.Subtrair: IOperacoes;
 begin
-  Result := TSubtrair.New;
+  Result := TSubtrair.New(FLista);
 end;
 
 { TCaptionHelper }

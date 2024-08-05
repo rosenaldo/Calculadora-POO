@@ -45,30 +45,34 @@ implementation
 
 procedure TFOR_PRINCIPAL.BTN_DIVIDIRClick(Sender: TObject);
 begin
-  EDT_NUM03.Text := '';
-//  Calculadora.Dividir.Operacao(EDT_NUM01.Text,
-//    EDT_NUM02.Text);
+  EDT_NUM03.Text := Calculadora
+                              .Add(EDT_NUM01.Text)
+                              .Add(EDT_NUM02.Text)
+                              .Dividir.Executar;
 end;
 
 procedure TFOR_PRINCIPAL.BTN_MULTIPLICARClick(Sender: TObject);
 begin
-  EDT_NUM03.Text := '';
-//  Calculadora.Multiplicar.Operacao(EDT_NUM01.Text,
-//    EDT_NUM02.Text);
+  EDT_NUM03.Text := Calculadora
+                              .Add(EDT_NUM01.Text)
+                              .Add(EDT_NUM02.Text)
+                              .Multiplicar.Executar;
 end;
 
 procedure TFOR_PRINCIPAL.BTN_SOMAClick(Sender: TObject);
 begin
-  EDT_NUM03.Text := '';
-//  Calculadora.Soma.Operacao(EDT_NUM01.Text,
-//    EDT_NUM02.Text);
+  EDT_NUM03.Text := Calculadora
+                              .Add(EDT_NUM01.Text)
+                              .Add(EDT_NUM02.Text)
+                              .Soma.Executar;
 end;
 
 procedure TFOR_PRINCIPAL.BTN_SUBTRAIRClick(Sender: TObject);
 begin
-  EDT_NUM03.Text := '';
-  // Calculadora.Subtrair.Operacao(EDT_NUM01.Text,
-  // EDT_NUM02.Text);
+  EDT_NUM03.Text := Calculadora
+                              .Add(EDT_NUM01.Text)
+                              .Add(EDT_NUM02.Text)
+                              .Subtrair.Executar;
 end;
 
 procedure TFOR_PRINCIPAL.FormCreate(Sender: TObject);
