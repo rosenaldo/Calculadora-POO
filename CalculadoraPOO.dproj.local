@@ -2,24 +2,26 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>2024/07/19 10:13:33.000.775,=C:\Users\Windows 10\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2024/07/19 10:14:44.000.951,C:\Users\Windows 10\Documents\fontes\Calculadora-POO\UCalculadora.dfm=C:\Users\Windows 10\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
-    <Transaction>2024/07/19 10:14:44.000.951,C:\Users\Windows 10\Documents\fontes\Calculadora-POO\UCalculadora.pas=C:\Users\Windows 10\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2024/07/19 10:15:43.000.919,C:\Users\Windows 10\Documents\fontes\Calculadora-POO\CalculadoraPOO.dproj=C:\Users\Windows 10\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2024/07/19 10:14:44.000.951,C:\Users\Windows 10\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\Windows 10\Documents\fontes\Calculadora-POO\UCalculadora.pas</Transaction>
+    <Transaction>2024/07/19 10:14:44.000.951,C:\Users\Windows 10\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\Windows 10\Documents\fontes\Calculadora-POO\UCalculadora.dfm</Transaction>
+    <Transaction>2024/07/19 10:15:43.000.919,C:\Users\Windows 10\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\Windows 10\Documents\fontes\Calculadora-POO\CalculadoraPOO.dproj</Transaction>
     <Transaction>2024/07/19 10:22:42.000.369,=C:\Users\Windows 10\Documents\fontes\Calculadora-POO\Unit1.pas</Transaction>
-    <Transaction>2024/07/19 10:23:03.000.311,C:\Users\Windows 10\Documents\fontes\Calculadora-POO\UClasse.Calculadora.pas=C:\Users\Windows 10\Documents\fontes\Calculadora-POO\Unit1.pas</Transaction>
+    <Transaction>2024/07/19 10:23:03.000.311,C:\Users\Windows 10\Documents\fontes\Calculadora-POO\Unit1.pas=C:\Users\Windows 10\Documents\fontes\Calculadora-POO\UClasse.Calculadora.pas</Transaction>
     <Transaction>2024/07/26 14:47:47.000.107,=C:\Users\Windows 10\Documents\fontes\Calculadora-POO\Unit1.pas</Transaction>
-    <Transaction>2024/07/26 14:48:14.000.471,C:\Users\Windows 10\Documents\fontes\Calculadora-POO\Unit1.pas=C:\Users\Windows 10\Documents\fontes\Calculadora-POO\UInterface.Calculadora.pas</Transaction>
+    <Transaction>2024/07/26 14:48:14.000.471,C:\Users\Windows 10\Documents\fontes\Calculadora-POO\UInterface.Calculadora.pas=C:\Users\Windows 10\Documents\fontes\Calculadora-POO\Unit1.pas</Transaction>
     <Transaction>2024/07/26 15:08:11.000.751,=C:\Users\Windows 10\Documents\fontes\Calculadora-POO\Unit1.pas</Transaction>
-    <Transaction>2024/07/26 15:08:27.000.320,C:\Users\Windows 10\Documents\fontes\Calculadora-POO\Unit1.pas=C:\Users\Windows 10\Documents\fontes\Calculadora-POO\UClasse.Helper.pas</Transaction>
+    <Transaction>2024/07/26 15:08:27.000.320,C:\Users\Windows 10\Documents\fontes\Calculadora-POO\UClasse.Helper.pas=C:\Users\Windows 10\Documents\fontes\Calculadora-POO\Unit1.pas</Transaction>
     <Transaction>2024/07/26 15:11:55.000.594,=C:\Users\Windows 10\Documents\fontes\Calculadora-POO\Unit1.pas</Transaction>
-    <Transaction>2024/07/26 15:12:12.000.057,C:\Users\Windows 10\Documents\fontes\Calculadora-POO\Unit1.pas=C:\Users\Windows 10\Documents\fontes\Calculadora-POO\UClasse.Soma.pas</Transaction>
+    <Transaction>2024/07/26 15:12:12.000.057,C:\Users\Windows 10\Documents\fontes\Calculadora-POO\UClasse.Soma.pas=C:\Users\Windows 10\Documents\fontes\Calculadora-POO\Unit1.pas</Transaction>
     <Transaction>2024/07/26 15:13:32.000.525,=C:\Users\Windows 10\Documents\fontes\Calculadora-POO\Unit1.pas</Transaction>
-    <Transaction>2024/07/26 15:13:49.000.753,C:\Users\Windows 10\Documents\fontes\Calculadora-POO\Unit1.pas=C:\Users\Windows 10\Documents\fontes\Calculadora-POO\UClasse.Subtrair.pas</Transaction>
+    <Transaction>2024/07/26 15:13:49.000.753,C:\Users\Windows 10\Documents\fontes\Calculadora-POO\UClasse.Subtrair.pas=C:\Users\Windows 10\Documents\fontes\Calculadora-POO\Unit1.pas</Transaction>
     <Transaction>2024/07/26 15:15:36.000.403,=C:\Users\Windows 10\Documents\fontes\Calculadora-POO\Unit1.pas</Transaction>
-    <Transaction>2024/07/26 15:15:51.000.283,C:\Users\Windows 10\Documents\fontes\Calculadora-POO\Unit1.pas=C:\Users\Windows 10\Documents\fontes\Calculadora-POO\UClasse.Dividir.pas</Transaction>
+    <Transaction>2024/07/26 15:15:51.000.283,C:\Users\Windows 10\Documents\fontes\Calculadora-POO\UClasse.Dividir.pas=C:\Users\Windows 10\Documents\fontes\Calculadora-POO\Unit1.pas</Transaction>
     <Transaction>2024/07/26 15:16:59.000.948,=C:\Users\Windows 10\Documents\fontes\Calculadora-POO\Unit1.pas</Transaction>
-    <Transaction>2024/07/26 15:17:15.000.548,C:\Users\Windows 10\Documents\fontes\Calculadora-POO\Unit1.pas=C:\Users\Windows 10\Documents\fontes\Calculadora-POO\UClasse.Multiplicar.pas</Transaction>
+    <Transaction>2024/07/26 15:17:15.000.548,C:\Users\Windows 10\Documents\fontes\Calculadora-POO\UClasse.Multiplicar.pas=C:\Users\Windows 10\Documents\fontes\Calculadora-POO\Unit1.pas</Transaction>
     <Transaction>2024/07/29 15:09:44.000.253,=C:\Users\Windows 10\Documents\fontes\Calculadora-POO\Unit1.pas</Transaction>
-    <Transaction>2024/07/29 15:10:02.000.603,C:\Users\Windows 10\Documents\fontes\Calculadora-POO\UCauculadora.Operacoes.pas=C:\Users\Windows 10\Documents\fontes\Calculadora-POO\Unit1.pas</Transaction>
+    <Transaction>2024/07/29 15:10:02.000.603,C:\Users\Windows 10\Documents\fontes\Calculadora-POO\Unit1.pas=C:\Users\Windows 10\Documents\fontes\Calculadora-POO\UCauculadora.Operacoes.pas</Transaction>
+    <Transaction>2024/08/15 17:26:28.490,=C:\Users\Windows 10\Documents\fontes\Calculadora-POO\Unit1.pas</Transaction>
+    <Transaction>2024/08/15 17:26:51.901,C:\Users\Windows 10\Documents\fontes\Calculadora-POO\UCalculadora.Eventos.pas=C:\Users\Windows 10\Documents\fontes\Calculadora-POO\Unit1.pas</Transaction>
   </Transactions>
 </BorlandProject>

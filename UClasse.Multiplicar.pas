@@ -42,6 +42,7 @@ begin
   Result := FLista[0].ToString;
   for I := 1 to pred(FLista.count) do
     Result := (Result.ToDouble * FLista[I]).ToString;
+  DisplayTotal(Result);
 
   inherited
 end;

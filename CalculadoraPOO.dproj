@@ -110,6 +110,7 @@
         <DCCReference Include="UClasse.Dividir.pas"/>
         <DCCReference Include="UClasse.Multiplicar.pas"/>
         <DCCReference Include="UCauculadora.Operacoes.pas"/>
+        <DCCReference Include="UCalculadora.Eventos.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

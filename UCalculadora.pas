@@ -26,6 +26,7 @@ type
   private
     FCalculadora: ICalculadora;
     procedure SetCalculadora(const Value: ICalculadora);
+    procedure ExibeResultado(Value: string);
     { Private declarations }
   public
     property Calculadora: ICalculadora read FCalculadora write SetCalculadora;
@@ -45,39 +46,32 @@ implementation
 
 procedure TFOR_PRINCIPAL.BTN_DIVIDIRClick(Sender: TObject);
 begin
-  EDT_NUM03.Text := Calculadora
-                              .Add(EDT_NUM01.Text)
-                              .Add(EDT_NUM02.Text)
-                              .Dividir.Executar;
+  Calculadora.Add(EDT_NUM01.Text).Add(EDT_NUM02.Text).Dividir.Executar;
 end;
 
 procedure TFOR_PRINCIPAL.BTN_MULTIPLICARClick(Sender: TObject);
 begin
-  EDT_NUM03.Text := Calculadora
-                              .Add(EDT_NUM01.Text)
-                              .Add(EDT_NUM02.Text)
-                              .Multiplicar.Executar;
+  Calculadora.Add(EDT_NUM01.Text).Add(EDT_NUM02.Text).Multiplicar.Executar;
 end;
 
 procedure TFOR_PRINCIPAL.BTN_SOMAClick(Sender: TObject);
 begin
-  EDT_NUM03.Text := Calculadora
-                              .Add(EDT_NUM01.Text)
-                              .Add(EDT_NUM02.Text)
-                              .Soma.Executar;
+  Calculadora.Add(EDT_NUM01.Text).Add(EDT_NUM02.Text).Soma.Executar;
 end;
 
 procedure TFOR_PRINCIPAL.BTN_SUBTRAIRClick(Sender: TObject);
 begin
-  EDT_NUM03.Text := Calculadora
-                              .Add(EDT_NUM01.Text)
-                              .Add(EDT_NUM02.Text)
-                              .Subtrair.Executar;
+  Calculadora.Add(EDT_NUM01.Text).Add(EDT_NUM02.Text).Subtrair.Executar;
+end;
+
+procedure TFOR_PRINCIPAL.ExibeResultado(Value: string);
+begin
+  EDT_NUM03.Text := Value;
 end;
 
 procedure TFOR_PRINCIPAL.FormCreate(Sender: TObject);
 begin
-  Calculadora := TCalculadora.New;
+  Calculadora := TCalculadora.New.Display.Resultado(ExibeResultado).EndDisplay;
 end;
 
 procedure TFOR_PRINCIPAL.SetCalculadora(const Value: ICalculadora);

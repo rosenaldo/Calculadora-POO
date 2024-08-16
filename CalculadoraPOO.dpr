@@ -10,7 +10,8 @@ uses
   UClasse.Subtrair in 'UClasse.Subtrair.pas',
   UClasse.Dividir in 'UClasse.Dividir.pas',
   UClasse.Multiplicar in 'UClasse.Multiplicar.pas',
-  UCauculadora.Operacoes in 'UCauculadora.Operacoes.pas';
+  UCauculadora.Operacoes in 'UCauculadora.Operacoes.pas',
+  UCalculadora.Eventos in 'UCalculadora.Eventos.pas';
 
 {$R *.res}
 

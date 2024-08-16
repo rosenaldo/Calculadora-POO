@@ -1,0 +1,31 @@
+unit UCauculadora.Operacoes;
+
+interface
+
+uses UInterface.Calculadora, System.Generics.Collections;
+
+type
+  TOperacoes = class(TInterfacedObject, IOperacoes, IOperacoesDisplay)
+
+  protected
+    FLista: TList<Double>;
+  public
+    function Executar: string; virtual;
+    function Display: IOperacoesDisplay;
+  end;
+
+implementation
+
+{ TOperacoes }
+
+function TOperacoes.Display: IOperacoesDisplay;
+begin
+  Result := Self;
+end;
+
+function TOperacoes.Executar: string;
+begin
+  FLista.clear;
+end;
+
+end.
